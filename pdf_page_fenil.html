@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+<title>Online LR</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+
+<style>
+
+@media print {
+
+
+  .box{
+  border:1px solid black;
+  border-radius:5px;
+ 
+  margin:2px 2px;  
+}
+
+.boxx{
+  border:1px solid black;
+  border-radius:5px;
+  padding-top:10px;
+  margin:1px 1px;  
+}
+
+.invoice{
+  width:100%;
+  height:100%;
+  line-height:1;
+  font-size:14px;
+  padding:1%;
+  vertical-align: middle;
+}
+ 
+td, th {
+  border-right:1px solid black;
+  border-bottom:1px solid black;
+}
+
+tr:last-child td {
+  border-bottom:0px;
+}
+
+tr td:last-child,
+tr th:last-child {
+  border-right:0px;
+}
+
+.small-table{
+  border: 0px;
+  padding:0px;
+  margin:0px;
+  font-size:0.8em;
+}
+
+.small-table td, .small-table th {
+  border:0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.small-table tr td:first-child{
+  border-bottom: 0px;
+  text-align:right;
+}
+
+td.double {
+  border:1px solid black;
+  border-radius: 0px;
+}
+
+.row-1{height:15%;width:100%;}
+.row-2{height:35%;width:100%;}
+.row-3{height:35%;width:100%;}
+.row-4{height:10%;width:100%;}
+
+
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.row {
+  margin:0px!important;
+  padding:0px!important;
+}
+
+input {
+  border:0px;
+  border-bottom:1px solid grey;
+  overflow:hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-weight:cursive;
+  padding:0px!important;
+}
+
+.full {
+  display: flex;
+}
+
+.full input {
+  flex: 2;
+}
+
+.insured-p {
+  padding: 2px;
+  margin:0px;
+  text-align: center;
+}
+
+.row-4 {
+  padding:10px 30px!important;
+  align-items: center;
+}
+
+.row-4 h6{
+  font-size:1em;
+  border-bottom:0px;
+}
+
+.sign-for {
+  position: relative;
+  top:-10px;
+}
+
+.myclass {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+
+}
+
+
+
+.box{
+  border:1px solid black;
+  border-radius:5px;
+ 
+  margin:2px 2px;  
+}
+
+.boxx{
+  border:1px solid black;
+  border-radius:5px;
+  padding-top:10px;
+  margin:1px 1px;  
+}
+
+.invoice{
+  width:100%;
+  height:100%;
+  line-height:1;
+  font-size:14px;
+  padding:1%;
+}
+ 
+td, th {
+  border-right:1px solid black;
+  border-bottom:1px solid black;
+}
+
+tr:last-child td {
+  border-bottom:0px;
+}
+
+tr td:last-child,
+tr th:last-child {
+  border-right:0px;
+}
+
+.small-table{
+  border: 0px;
+  padding:0px;
+  margin:0px;
+  font-size:0.8em;
+}
+
+.small-table td, .small-table th {
+  border:0px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.small-table tr td:first-child{
+  border-bottom: 0px;
+  text-align:right;
+}
+
+td.double {
+  border:1px solid black;
+  border-radius: 0px;
+}
+
+.row-1{height:15%;width:100%;}
+.row-2{height:35%;width:100%;}
+.row-3{height:35%;width:100%;}
+.row-4{height:10%;width:100%;}
+
+
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.row {
+  margin:0px!important;
+  padding:0px!important;
+}
+
+input {
+  border:0px;
+  border-bottom:1px solid grey;
+  overflow:hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-weight:cursive;
+  padding:0px!important;
+}
+
+.full {
+  display: flex;
+}
+
+.full input {
+  flex: 2;
+}
+
+.insured-p {
+  padding: 2px;
+  margin:0px;
+  text-align: center;
+}
+
+.row-4 {
+  padding:10px 30px!important;
+  align-items: center;
+}
+
+.row-4 h6{
+  font-size:1em;
+  border-bottom:0px;
+}
+
+.sign-for {
+  position: relative;
+  top:-10px;
+}
+
+
+
+
+
+
+</style>
+</head>
+<body class="A4 landscape">
+    <div class="myclass">
+
+        <section class="sheet invoice">
+
+          <div class="row row-1 box">
+          </div>
+         
+          <div class="row row-2">
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-6">
+                <div class="box" style="height:124px;">
+                    <h6 class="text-center font-weight-bold">Notice</h6>
+                        <small><b>This Consignment will not be detained, diverted ,re-routed, or re-booked without Consignee’s written permission. Will be delivered at the destination. Special Lorry Receipt Form shall be delivered to only Consignee and under no circumstance it would be delivered to anyone without advance written approval from Consignee / Consignor.</b></small>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="box" style="height:124px;">
+                    <h6 class="text-center font-weight-bold">Insurance</h6>
+                        <small><b>The customer has stated that the consignment has been ●&nbsp;insured&nbsp;○&nbsp;not insured 
+                  <br/>Insurance Company <input type="text" value="" class="col-md-7 text-left" style="border:0px none">
+                  <br/>Policy Number <input type="text" value="" class="col-md-4 text-left"> Dated <input type="text" value="" class="col-md-3 text-left">
+                  <br/>Amount <input type="text" value="" class="col-md-3 text-left"> Risk <input type="text" value="" class="col-md-4 text-left">
+                   <br/>&nbsp;</b></small>
+                </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="box">
+                   <div class="row full">Consignor's Name : &nbsp;<input type="text" value="" style="border:0px none"></div>
+                   <div class="row full">Address : &nbsp;<input type="text" value="" style="border:0px none"></div>
+                   <div class="row full" style="margin-bottom: 2padding:2px!important;px!important;padding:2px!important;">
+                     GST No. : &nbsp;<input type="text" value="" class="col-md-3" style="border:0px none">&nbsp;&nbsp;
+                     Phone No. : &nbsp;<input type="text" value="" class="col-md-2" style="border:0px none">&nbsp;&nbsp;
+                     Email ID : &nbsp;<input type="text" value="" class="col-md-3" style="border:0px none"> 
+                   </div>
+                   <div class="row full">Consignee's Name : &nbsp;<input type="text" value="" style="border:0px none"></div>
+                   <div class="row full">Address : &nbsp;<input type="text" value="" style="border:0px none"></div>
+                   <div class="row full" style="padding:2px!important;">
+                     GST No. : &nbsp;<input type="text" value="" class="col-md-3" style="border:0px none">&nbsp;&nbsp;
+                     Phone No. : &nbsp;<input type="text" value="" class="col-md-2" style="border:0px none">&nbsp;&nbsp;
+                     Email ID : &nbsp;<input type="text" value="" class="col-md-3" style="border:0px none"> 
+                   </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <p class="insured-p">
+              <b>
+                 Lr No. <input type="text" value="" class="col-md-4">
+                 Dated <input type="text" value="" class="col-md-4">
+              </b>
+              </p>
+              <div class="row">
+              <div class="box">
+                <div class="col-md-12">
+                  From <input type="text" value="" class="col-md-5">
+                  To <input type="text" value="" class="col-md-5">
+                </div>
+                <div class="col-md-12 full">
+                  Truck No.<input type="text" value="">
+                </div>
+                <div class="col-md-12 full">
+                  Driver Name <input type="text" value="">
+                </div>
+                <div class="col-md-12 full">
+                  Phone <input type="text" value="">
+                </div>
+                <div class="col-md-12 full">
+                  License No. <input type="text" value="">
+                </div>
+                <div class="col-md-12">
+                  <label class="col-md-5"> Delivery Type </label>
+                  <label>Door / Warehouse</label>
+                </div>
+                <div class="col-md-12">
+                  <label class="col-md-3">Freight </label>
+                  <label class="col-md-3">●&nbsp;Paid</label>
+                  <label class="col-md-3">○&nbsp;To Pay</label>
+                </div>
+              </div>          
+              </div>
+              <div class="row">
+              <div class="col-md-12">
+                <div class="box" style="height:85px;">
+                <h6 class="text-center font-weight-bold">Schedule of demurrage charges</h6>
+                <small><b>
+                  Demurrage chargeable after <input type="text" value="" class="col-md-2">days from today at
+                  <br/>Rs. <input type="text" value="" class="col-md-5"> per Day per ton weight charged.
+                  </b></small>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-3 boxx">
+            <table height="100%" width="100%" class="main-table">
+              <tr height="15%" class="text-center font-weight-bold">
+                <th width="4%">Sr no.</th>
+                <th width="10%">No. of Articles / Packages</th>
+                <th width="10%">Packaging Type</th>
+                <th width="20%">Material Name</th>
+                <th width="10%">HSN Code</th>
+                <th width="8%">Actual Weight<br>(MT/Kg)</th>
+                <th width="30%">
+                  <p class="row text-center">
+                  <span class="col-md-12 text-center">Amount</span>
+                  </p>
+                  <p class="row">
+                    <span class="col-md-6"></span>
+                    <span class="col-md-6">To pay / Paid</span>
+                  </p>
+                </th>
+                <th width="8%">
+                  <span>Other Remarks</span>
+                </th>
+              </tr>
+              <tr height="85%">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="small-table">
+                  <table width="100%" height="100%">
+                    <tr>
+                      <td width="60%">Basic Freight per MT/kg</td>
+                      <td width="40%"></td>
+                    </tr>
+                    <tr>
+                      <td>Pickup Charge / Door Delivery</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Service Charge</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Loading/Unloading Charge</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>COD / DOD</td>
+                      <td></td>
+                    </tr>
+                    
+                    <tr>
+                      <td>Other Charges</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Way bridge Charge</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Subtotal</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>GST (5%, 12%, 18%)</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Advance Paid Amount</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td><em>Total Freight</em></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="double text-left">
+                        <label>Total Amount in words: </label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="double text-left">GST Payable by : &nbsp;&nbsp; Consignee / Consignor</td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="double text-left">Remaining Amount Pay by: &nbsp;&nbsp;⬤&nbsp;Consignor&nbsp;&nbsp;&nbsp;&nbsp;◯&nbsp;Consignee</td>
+                    </tr>
+                  </table>
+                </td>
+                <td style="border-left:1px solid black"></td>
+              </tr>
+            </table>
+          </div>
+          <div class="row row-4 ">
+            <div class="col-md-3">
+              <h6>Bank A/C No. <input type="text" value="" class="col-md-6"></h6>
+              <h6>IFSC Code <input type="text" value="" class="col-md-6"></h6>
+            </div>
+            <div class="col-md-6">
+              <h6>Total Invoice Amount of Goods: <input type="text" value="" class="col-md-6"></h6>
+              <h6>This is a computer generated LR Receipt/Bilty.</h6>
+            </div>
+            <div class="col-md-3 text-center">
+              <small class="sign-for">For {{company_name}}</small>
+              <input type="text" value="" class="col-md-12">
+              <small><b>Authorised Signature</b></small>
+             
+            </div>
+          </div>
+           <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-50">
+                  <p class="insured-p"> ⬤&nbsp;AT OWNER'S RISK&nbsp;&nbsp;&nbsp;◯&nbsp;CARRIER'S RISK</p>
+                </div>
+              </div>
+          </section>
+
+      </div>    
+  </body>
+  </html>
